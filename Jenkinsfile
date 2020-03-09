@@ -20,7 +20,11 @@ node{
         }
     }
    stage('Artifact Upload') {
-        
+        node {
+            def pom = readMavenPom file: 'pom.xml'
+            def file = "${pom.artifactId}-${pom.version}"
+            def jar = "target/${file}.war"
+
             sh "cp pom.xml ${file}.pom"
 
             nexusArtifactUploader artifacts: [
@@ -29,10 +33,11 @@ node{
                 ], 
                 credentialsId: 'nexus', 
                 groupId: "${pom.groupId}", 
-                nexusUrl: 'nexus.local:8081', 
+                nexusUrl: NEXUS_URL, 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'Ecommerce-App', 
+                repository: 'maven-releases', 
                 version: "${pom.version}"        
         }
+    }
 }
