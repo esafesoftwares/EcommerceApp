@@ -15,7 +15,7 @@ stage('Build') {
                 def pom = readMavenPom file: 'pom.xml'
                 sh "mvn -B versions:set -DnewVersion=${pom.version}-${BUILD_NUMBER}"
                 sh "mvn -B -Dmaven.test.skip=true clean package"
-                stash name: "artifact", includes: "target/ECommerceApp*.war"
+                stash name: "artifact", includes: "target/ECommerceApp-*.war"
             }
       }
 }
