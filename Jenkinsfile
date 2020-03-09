@@ -35,7 +35,6 @@ stage('Approval') {
             input 'Do I have your approval for deployment?'
         }
     }
-}
 stage('Artifact Upload') {
         node {
             unstash 'artifact'
