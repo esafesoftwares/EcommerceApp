@@ -58,4 +58,3 @@ stage('Artifact Upload') {
                 version: "${pom.version}"        
         }
     }
-}
