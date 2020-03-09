@@ -120,8 +120,6 @@
             </configuration>
         </plugin>
     </plugins>
-</build>
-  <build>
     <finalName>ECommerceApp</finalName>
   </build>
 </project>
