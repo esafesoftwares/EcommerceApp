@@ -37,8 +37,7 @@ stage('Approval') {
     }
 stage('Artifact Upload') {
         node {
-            stash 'artifact'
-
+           
             def pom = readMavenPom file: 'pom.xml'
             def file = "${pom.artifactId}-${pom.version}"
             def jar = "target/${file}.war"
