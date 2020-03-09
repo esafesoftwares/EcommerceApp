@@ -6,7 +6,7 @@
 //final HOST_PROVISION = params.HOST_PROVISION
 
 final GIT_URL = 'https://github.com/esafesoftwares/EcommerceApp.git'
-//final NEXUS_URL = 'nexus.local:8081'
+final NEXUS_URL = 'nexus.local:8081'
 
 stage('Build') {
     node {
